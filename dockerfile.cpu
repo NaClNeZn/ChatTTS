@@ -1,4 +1,4 @@
-FROM pytorch/torchserve:0.11.0-cpu as builder
+FROM registry.cn-hangzhou.aliyuncs.com/nacl-public/torchserve:0.11.0-cpu as builder
 
 USER root
 
