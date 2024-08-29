@@ -344,6 +344,6 @@ def clear_wavs():
 if __name__ == '__main__':
     # 读取.env变量
     host = os.getenv('WEB_ADDRESS', '0.0.0.0')
-    port = os.getenv('WEB_PORT', 8080)
+    port = os.getenv('WEB_PORT', 9999)
     # 指定端口,host,0.0.0.0代表不管几个网卡，任何ip都可访问
     app.run(debug=True, port=port, host=host)
