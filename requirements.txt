@@ -1,7 +1,12 @@
 numpy<2.0.0
 numba
+# 默认 CPU
 torch>=2.1.0
 torchaudio
+
+# GPU
+# pip uninstall torch torchvision torchaudio -y
+# pip install torch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2 --index-url https://download.pytorch.org/whl/cu121
 tqdm
 vector_quantize_pytorch
 transformers>=4.41.1
@@ -14,3 +19,7 @@ WeTextProcessing; sys_platform == 'linux'
 nemo_text_processing; sys_platform == 'linux'
 av
 pydub
+
+# web
+python-dotenv
+pandas
