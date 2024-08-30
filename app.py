@@ -9,8 +9,6 @@ import json
 import torchaudio
 import wave
 from pathlib import Path
-
-print('Starting...')
 import shutil
 import time
 
@@ -64,7 +62,6 @@ elif device_str == 'cuda':
 elif device_str == 'cpu':
     device = torch.device("cpu")
 
-print("驱动:", device)
 chat.load(source="local" if not os.path.exists(MODEL_DIR + "/DVAE_full.pt") else 'custom', custom_path=ROOT_DIR,
           device=device, compile=True if os.getenv('compile', 'true').lower() != 'false' else False)
 
@@ -345,5 +342,14 @@ if __name__ == '__main__':
     # 读取.env变量
     host = os.getenv('WEB_ADDRESS', '0.0.0.0')
     port = os.getenv('WEB_PORT', 9999)
+
+    print('Starting...')
+    print("驱动:", device)
+    print('SPEAKER_DIR::', SPEAKER_DIR)
+    print('LOGS_DIR::', LOGS_DIR)
+    print('WAVS_DIR::', WAVS_DIR)
+    print('MODEL_DIR::', MODEL_DIR)
+    print('ROOT_DIR::', ROOT_DIR)
+
     # 指定端口,host,0.0.0.0代表不管几个网卡，任何ip都可访问
     app.run(debug=True, port=port, host=host)
