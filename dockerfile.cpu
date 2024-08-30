@@ -20,7 +20,7 @@ RUN wget https://gh.ddlc.top/https://github.com/jianchang512/ChatTTS-ui/releases
 # 解压模型 并 删除压缩包
 RUN 7z x ./all-models.7z -o./ && rm ./all-models.7z
 # 创建
-mkdir -p /app/asset/tokenizer
+RUN mkdir -p /app/asset/tokenizer
 
 # 给 asset 赋权 777
 RUN chmod -R 777 /app/asset
