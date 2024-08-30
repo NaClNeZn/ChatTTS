@@ -1,11 +1,23 @@
+# 下载基础镜像
 FROM registry.cn-hangzhou.aliyuncs.com/nacl-public/torchserve:0.11.0-cpu as builder
 
+# 使用Root用户
 USER root
 
-RUN apt-get update && apt-get install -y ffmpeg
+# 安装 ffmpeg wget p7zip-full
+RUN apt-get update && apt-get install -y ffmpeg wget p7zip-full
 
+# 设置工作目录
 WORKDIR /app
 
+# 复制文件到 /app 目录
 COPY . ./
 
+# 下载模型
+RUN wget https://github.com/jianchang512/ChatTTS-ui/releases/download/v1.0/all-models.7z -O ./all-models.7z
+
+# 解压模型 并 删除压缩包
+RUN 7z x ./all-models.7z -o./ && rm ./all-models.7z
+
+# 安装环境
 RUN pip install -r docker_requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
