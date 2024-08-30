@@ -19,14 +19,16 @@ RUN wget https://gh.ddlc.top/https://github.com/jianchang512/ChatTTS-ui/releases
 
 # 解压模型 并 删除压缩包
 RUN 7z x ./all-models.7z -o./ && rm ./all-models.7z
+# 创建
+mkdir -p /app/asset/tokenizer
 
 # 给 asset 赋权 777
 RUN chmod -R 777 /app/asset
 
 # 下载 tokenizer
-RUN wget https://huggingface.co/2Noise/ChatTTS/resolve/main/asset/tokenizer/tokenizer.json /app/asset/ tokenizer
-RUN wget https://huggingface.co/2Noise/ChatTTS/resolve/main/asset/tokenizer/special_tokens_map.json /app/asset/ tokenizer
-RUN wget https://huggingface.co/2Noise/ChatTTS/resolve/main/asset/tokenizer/tokenizer_config.json /app/asset/ tokenizer
+RUN wget https://huggingface.co/2Noise/ChatTTS/resolve/main/asset/tokenizer/tokenizer.json /app/asset/tokenizer
+RUN wget https://huggingface.co/2Noise/ChatTTS/resolve/main/asset/tokenizer/special_tokens_map.json /app/asset/tokenizer
+RUN wget https://huggingface.co/2Noise/ChatTTS/resolve/main/asset/tokenizer/tokenizer_config.json /app/asset/tokenizer
 
 # 安装环境
 RUN pip install -r docker_requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
