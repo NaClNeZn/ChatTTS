@@ -30,8 +30,8 @@ RUN chmod -R 777 /app/asset
 # RUN wget -O /app/asset/tokenizer/special_tokens_map.json https://huggingface.co/2Noise/ChatTTS/resolve/main/asset/tokenizer/special_tokens_map.json
 # RUN wget -O /app/asset/tokenizer/tokenizer_config.json https://huggingface.co/2Noise/ChatTTS/resolve/main/asset/tokenizer/tokenizer_config.json
 RUN wget -O /app/asset/tokenizer/tokenizer.json https://hf-mirror.com/2Noise/ChatTTS/resolve/main/asset/tokenizer/tokenizer.json
-RUN wget -O /app/asset/tokenizer/special_tokens_map.json https://huggingface.co/2Noise/ChatTTS/resolve/main/asset/tokenizer/special_tokens_map.json
-RUN wget -O /app/asset/tokenizer/tokenizer_config.json https://huggingface.co/2Noise/ChatTTS/resolve/main/asset/tokenizer/tokenizer_config.json
+RUN wget -O /app/asset/tokenizer/special_tokens_map.json https://hf-mirror.com/2Noise/ChatTTS/resolve/main/asset/tokenizer/special_tokens_map.json
+RUN wget -O /app/asset/tokenizer/tokenizer_config.json https://hf-mirror.com/2Noise/ChatTTS/resolve/main/asset/tokenizer/tokenizer_config.json
 
 # 安装环境
 RUN pip install -r docker_requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
