@@ -23,5 +23,10 @@ RUN 7z x ./all-models.7z -o./ && rm ./all-models.7z
 # 给 asset 赋权 777
 RUN chmod -R 777 /app/asset
 
+# 下载 tokenizer
+RUN https://huggingface.co/2Noise/ChatTTS/resolve/main/asset/tokenizer/tokenizer.json /app/asset/ tokenizer
+RUN https://huggingface.co/2Noise/ChatTTS/resolve/main/asset/tokenizer/special_tokens_map.json /app/asset/ tokenizer
+RUN https://huggingface.co/2Noise/ChatTTS/resolve/main/asset/tokenizer/tokenizer_config.json /app/asset/ tokenizer
+
 # 安装环境
 RUN pip install -r docker_requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
