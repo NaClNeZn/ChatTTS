@@ -14,7 +14,7 @@ WORKDIR /app
 COPY . ./
 
 # 下载模型
-RUN wget https://github.com/jianchang512/ChatTTS-ui/releases/download/v1.0/all-models.7z -O ./all-models.7z
+# RUN wget https://github.com/jianchang512/ChatTTS-ui/releases/download/v1.0/all-models.7z -O ./all-models.7z
 
 # 解压模型 并 删除压缩包
 # RUN 7z x ./all-models.7z -o./ && rm ./all-models.7z
