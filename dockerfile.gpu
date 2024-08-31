@@ -34,4 +34,4 @@ RUN wget -O /app/asset/tokenizer/special_tokens_map.json https://hf-mirror.com/2
 RUN wget -O /app/asset/tokenizer/tokenizer_config.json https://hf-mirror.com/2Noise/ChatTTS/resolve/main/asset/tokenizer/tokenizer_config.json
 
 # 安装环境
-RUN pip install -r docker_requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+RUN pip install -r docker_gpu_requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
