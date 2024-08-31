@@ -1,5 +1,5 @@
 # 下载基础镜像
-FROM pytorch/torchserve:0.11.0-gpu as builder
+FROM registry.cn-hangzhou.aliyuncs.com/nacl-public/torchserve:0.11.0-gpu as builder
 
 # 使用Root用户
 USER root
