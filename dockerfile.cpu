@@ -35,3 +35,6 @@ RUN wget -O /app/asset/tokenizer/tokenizer_config.json https://hf-mirror.com/2No
 
 # 安装环境
 RUN pip install -r docker_cpu_requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+
+# 运行应用程序
+CMD ["python3", "app.py"]
